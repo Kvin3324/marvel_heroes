@@ -5,6 +5,7 @@ const AboutHero = props => {
     characters: null
   });
 
+
   useEffect(() => {
     const url = "https://gateway.marvel.com/"
     const apiKey = "f5d9657d8bb68f805b1ec30fe13cf70d"
