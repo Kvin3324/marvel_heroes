@@ -1,7 +1,5 @@
 import React from "react"
 import HeroCards from "./HeroCards"
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-// import AboutHero from "./AboutHero";
 
 class Characters extends React.Component {
   constructor(props) {
@@ -19,7 +17,7 @@ class Characters extends React.Component {
     const url = "https://gateway.marvel.com/"
     const apiKey = "f5d9657d8bb68f805b1ec30fe13cf70d"
 
-    fetch(`${url}v1/public/characters?apikey=${apiKey}&limit=40`)
+    fetch(`${url}v1/public/characters?apikey=${apiKey}&limit=100`)
       .then(response => response.json())
       .then(data => {
         this.setState({
@@ -57,11 +55,12 @@ class Characters extends React.Component {
           aria-label="Search"
           onChange={e => this.handleOnChange(e) }
           />
+          <p className="search--bar--input--hint">(Don't forget: a name begins with an uppercase. <span>😉</span>)</p>
         </div>
         <div className="row">
           { (function() {
             if(this.state.characters === null) {
-              return "loading..."
+              return <i className="fa fa-spinner"></i>
             }
             if(this.state.characters !== null) {
               if (this.state.showList.list) {
@@ -71,7 +70,7 @@ class Characters extends React.Component {
               }
               if (!this.state.showList.list) {
                 return this.state.characters.map(character => {
-                  return character.name.includes(this.state.showList.searchInput) ? <HeroCards name={character.name} id={character.id} description={character.description} img_hero={character.thumbnail} key={character.name} /> : null
+                  return character.name.includes(this.state.showList.searchInput) ? <HeroCards name={character.name} id={character.id} description={character.description} img_hero={character.thumbnail} key={character.id} /> : null
                 })
               }
             }
