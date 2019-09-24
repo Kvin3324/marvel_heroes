@@ -15,7 +15,6 @@ function App() {
   return (
     <HashRouter>
       <div className="container App">
-        <NavLink to="/">Home</NavLink>
         <Header/>
         <Route exact path="/" component={Introduction}/>
         <Route exact path="/" component={Characters}/>
