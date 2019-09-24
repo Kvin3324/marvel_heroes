@@ -15,10 +15,6 @@ function HeroCards(props) {
           <button className="btn btn-secondary">
             <Link to={`/about/${props.id}`}>Goooo</Link>
           </button>
-          {/* <Link to="/AboutHero"> */}
-            {/* <button className="btn btn-primary">Go to desc</button> */}
-            {/* Go */}
-          {/* </Link> */}
         </div>
       </div>
     </div>
