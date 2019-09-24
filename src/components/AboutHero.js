@@ -20,7 +20,7 @@ const AboutHero = props => {
     <div>
       {state.characters === null ?
         "loading" :
-        < SingleHero
+        <SingleHero
           name={state.characters[0].name}
           id={state.characters[0].id}
           description={state.characters[0].description}
