@@ -2,7 +2,7 @@ import React from "react"
 
 function HeroCards(props) {
   return (
-    <div className="col-xl-12 about--hero">
+    <div className="col-xl-12 mb-3 about--hero">
       <div className="col-xl-6 about--hero--img">
         <img src={`${props.img_hero.path}.${props.img_hero.extension}`} className="card-img-top" alt="..."/>
       </div>
@@ -13,11 +13,9 @@ function HeroCards(props) {
           {
             props.comics.items.map((item, index) => {
               return (
-              <p className="pt-3">
+              <li>
                 {props.comics.items[index].name}
-                <br/>
-                {props.comics.items[index].resourceURI}
-              </p>
+              </li>
               )
             })
           }
