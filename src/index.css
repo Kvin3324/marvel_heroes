@@ -12,6 +12,17 @@ code {
     monospace;
 }
 
+.fa-spinner {
+  font-size: 6em;
+  position: absolute;
+  left: 45%;
+  top: 50%;
+}
+
+.search--bar--input--hint {
+  font-size: 0.7em;
+}
+
 .title {
   height: 100px;
   width: 100%;
@@ -37,6 +48,11 @@ code {
 .card {
   margin-top: 40%;
   margin-left: 4%;
+}
+
+.link--to--go {
+  text-decoration: none;
+  color: white;
 }
 
 .about--hero {
