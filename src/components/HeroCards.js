@@ -1,7 +1,5 @@
 import React from "react"
 import {Link} from "react-router-dom";
-// import AboutHero from "./AboutHero"
-
 
 function HeroCards(props) {
   return (
@@ -13,7 +11,7 @@ function HeroCards(props) {
           <p>{props.id}</p>
           <p className="card-text">{props.description}</p>
           <button className="btn btn-secondary">
-            <Link to={`/about/${props.id}`}>Goooo</Link>
+            <Link to={`/about/${props.id}`} className="link--to--go">Goooo</Link>
           </button>
         </div>
       </div>
