@@ -7,7 +7,6 @@ import Characters from "./components/Characters"
 import AboutHero from "./components/AboutHero"
 import {
   Route,
-  NavLink,
   HashRouter
 } from "react-router-dom";
 
@@ -19,9 +18,6 @@ function App() {
         <Route exact path="/" component={Introduction}/>
         <Route exact path="/" component={Characters}/>
         <Route exact path="/about/:id" component={AboutHero}/>
-          {/* <Header />
-          <Introduction />
-          <Characters /> */}
       </div>
     </HashRouter>
   );
