@@ -20,9 +20,13 @@ code {
   margin-bottom: 15px;
   text-align: center;
   font-size: 30px;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+}
+
+.header--home {
+  font-size: 0.8em;
 }
 
 .search--bar--input {
@@ -33,4 +37,9 @@ code {
 .card {
   margin-top: 40%;
   margin-left: 4%;
+}
+
+.about--hero {
+  display: flex;
+  padding-top: 5%;
 }
