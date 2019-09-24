@@ -22,7 +22,6 @@ class Characters extends React.Component {
     fetch(`${url}v1/public/characters?apikey=${apiKey}&limit=40`)
       .then(response => response.json())
       .then(data => {
-        console.log(data.data.results)
         this.setState({
         characters: data.data.results
       })
@@ -49,42 +48,38 @@ class Characters extends React.Component {
 
   render() {
     return (
-      // <Router>
-        <React.Fragment>
-          <div className="search--bar">
-            <input
-            className="form-control search--bar--input"
-            type="text"
-            placeholder="Search"
-            aria-label="Search"
-            onChange={e => this.handleOnChange(e) }
-            />
-          </div>
-          <div className="row">
-            { (function() {
-              if(this.state.characters === null) {
-                return "loading..."
+      <React.Fragment>
+        <div className="search--bar">
+          <input
+          className="form-control search--bar--input"
+          type="text"
+          placeholder="Search"
+          aria-label="Search"
+          onChange={e => this.handleOnChange(e) }
+          />
+        </div>
+        <div className="row">
+          { (function() {
+            if(this.state.characters === null) {
+              return "loading..."
+            }
+            if(this.state.characters !== null) {
+              if (this.state.showList.list) {
+                return this.state.characters.map(character => {
+                  return <HeroCards name={character.name} id={character.id} description={character.description} img_hero={character.thumbnail} key={character.name} />
+                })
               }
-              if(this.state.characters !== null) {
-                if (this.state.showList.list) {
-                  return this.state.characters.map(character => {
-                    return <HeroCards name={character.name} id={character.id} description={character.description} img_hero={character.thumbnail} key={character.name} />
-                  })
-                }
-                if (!this.state.showList.list) {
-                  return this.state.characters.map(character => {
-                    return character.name.includes(this.state.showList.searchInput) ? <HeroCards name={character.name} id={character.id} description={character.description} img_hero={character.thumbnail} key={character.name} /> : null
-                  })
-                }
+              if (!this.state.showList.list) {
+                return this.state.characters.map(character => {
+                  return character.name.includes(this.state.showList.searchInput) ? <HeroCards name={character.name} id={character.id} description={character.description} img_hero={character.thumbnail} key={character.name} /> : null
+                })
               }
-            }).bind(this) ()
-             }
-          {/* <Route path="/about" component={AboutHero} /> */}
-          </div>
-        </React.Fragment>
-    //  </Router>
+            }
+          }).bind(this) ()
+          }
+        </div>
+      </React.Fragment>
     )}
 }
 
 export default Characters
-
