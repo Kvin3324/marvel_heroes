@@ -5,7 +5,7 @@ function Header() {
     return (
       <header className="title">
         <div className="d-flex ml-3 pt-3 header--home">
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/" className="header--text">Home</NavLink>
         </div>
         Marvel Characters
       </header>
