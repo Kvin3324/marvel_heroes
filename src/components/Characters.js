@@ -1,29 +1,36 @@
 import React from "react"
 import HeroCards from "./HeroCards"
+import Pagination from 'rc-pagination';
+import 'rc-pagination/assets/index.css';
 
 class Characters extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      url: "https://gateway.marvel.com/",
+      apiKey: "f5d9657d8bb68f805b1ec30fe13cf70d",
       characters: null,
       showList: {
         list: true,
-        searchInput: ""
-      }
-    }
+        searchInput: "",
+      },
+      currentPage: 1
+    };
   }
 
-  componentDidMount() {
-    const url = "https://gateway.marvel.com/"
-    const apiKey = "f5d9657d8bb68f805b1ec30fe13cf70d"
-
-    fetch(`${url}v1/public/characters?apikey=${apiKey}&limit=100`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
+  getList(page) {
+    fetch(`${this.state.url}v1/public/characters?apikey=${this.state.apiKey}&limit=10&offset=${page * 10}`)
+    .then(response => response.json())
+    .then(data => {
+      this.setState({
         characters: data.data.results
       })
     })
+
+  }
+
+  componentDidMount() {
+    this.getList(this.currentPage)
   }
 
   handleOnChange = (event) => {
@@ -31,17 +38,21 @@ class Characters extends React.Component {
       this.setState({
         showList: {
           list: false,
-          searchInput: event.target.value
+          searchInput: event.target.value,
         }
       })
     } else {
       this.setState({
         showList: {
           list: true,
-          searchInput: ""
+          searchInput: "",
         }
       })
     }
+  }
+
+  handleOnChangePage = (page) => {
+    this.getList(page)
   }
 
   render() {
@@ -55,7 +66,10 @@ class Characters extends React.Component {
           aria-label="Search"
           onChange={e => this.handleOnChange(e) }
           />
-          <p className="search--bar--input--hint">(Don't forget: a name begins with an uppercase. <span>😉</span>)</p>
+          <p className="search--bar--input--hint">(Don't forget: a name begins with an uppercase. <span role="img" aria-label="">😉</span>)</p>
+        </div>
+        <div className="pagination">
+          <Pagination onChange={page => this.getList(page)} defaultPageSize={10} total={1000} pageSize={10}  />
         </div>
         <div className="row">
           { (function() {
