@@ -45,8 +45,12 @@ code {
   margin-left: 25%;
 }
 
+.pagination {
+  margin-top: 5%;
+}
+
 .card {
-  margin-top: 40%;
+  margin-top: 10%;
   margin-left: 4%;
 }
 
