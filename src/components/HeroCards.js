@@ -3,15 +3,24 @@ import {Link} from "react-router-dom";
 
 function HeroCards(props) {
   return (
-    <div className="col-xl-4">
+    <div className="col-xl-3 mr-2">
       <div className="card">
-        <img src={`${props.img_hero.path}.${props.img_hero.extension}`} className="card-img-top" alt="..."/>
+        <img src={`${props.img_hero.path}.${props.img_hero.extension}`} className="card-img-list" alt="..."/>
         <div className="card-body">
           <h5 className="card-title"> {props.name}</h5>
           <p>(#{props.id})</p>
-          <p className="card-text">{props.description}</p>
+          { (function() {
+            if (props.description.length > 200) {
+              return <p className="card-text">{props.description.substr(0, 50)} (...)</p>
+            } else if (props.description.length === 0) {
+              return <p className="card-text-not-available">No description available.</p>
+            } else {
+              return <p className="card-text">{props.description}</p>
+            }
+          }) ()
+          }
           <button className="btn btn-secondary">
-            <Link to={`/about/${props.id}`} className="link--to--go">Goooo</Link>
+            <Link to={`/about/${props.id}`} className="link--to--go">More informations</Link>
           </button>
         </div>
       </div>
