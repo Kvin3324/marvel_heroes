@@ -49,9 +49,26 @@ code {
   margin-top: 5%;
 }
 
+.container--cards {
+  margin-left: 10%;
+}
+
 .card {
+  width: 112%;
   margin-top: 10%;
-  margin-left: 4%;
+  margin-left: 10%;
+}
+
+.card-text-not-available {
+  padding-bottom: 24px;
+}
+
+.card-img-list {
+  height: 250px;
+}
+
+.card--img--single {
+  width: 100%;
 }
 
 .header--text, .header--text:hover, .link--to--go, .link--to--go:hover {
