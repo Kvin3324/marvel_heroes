@@ -1,8 +1,6 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import Header from "./components/Header"
-import Introduction from "./components/Introduction"
 import Characters from "./components/Characters"
 import AboutHero from "./components/AboutHero"
 import {
@@ -15,7 +13,6 @@ function App() {
     <HashRouter>
       <div className="container App">
         <Header/>
-        <Route exact path="/" component={Introduction}/>
         <Route exact path="/" component={Characters}/>
         <Route exact path="/about/:id" component={AboutHero}/>
       </div>
