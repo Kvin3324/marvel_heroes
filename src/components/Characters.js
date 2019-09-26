@@ -59,16 +59,18 @@ class Characters extends React.Component {
   render() {
     return (
       <React.Fragment>
+      <div className="banner">
         <div className="search--bar">
           <input
           className="form-control search--bar--input"
           type="text"
-          placeholder="Search"
+          placeholder="Search your Hero"
           aria-label="Search"
           onChange={e => this.handleOnChange(e) }
           />
           <p className="search--bar--input--hint">(Don't forget: a name begins with an uppercase. <span role="img" aria-label="">😉</span>)</p>
         </div>
+      </div>
         <div className="container container--cards">
           <div className="pagination">
             <Pagination onChange={page => this.getList(page)} defaultPageSize={10} total={1000} pageSize={10}  />
