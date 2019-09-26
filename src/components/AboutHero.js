@@ -14,7 +14,6 @@ const AboutHero = props => {
       .then(response => response.json())
       .then(data => setState({characters: data.data.results}))
     }, []);
-    console.log(state);
 
   return (
     <div>
