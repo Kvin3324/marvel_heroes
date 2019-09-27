@@ -8,7 +8,7 @@ const AboutHero = props => {
 
   useEffect(() => {
     const url = "https://gateway.marvel.com/"
-    const apiKey = "f5d9657d8bb68f805b1ec30fe13cf70d"
+    const apiKey = "d87aaf099d9bdee47146e7c016069624"
 
     fetch(`${url}v1/public/characters/${props.match.params.id}?apikey=${apiKey}`)
       .then(response => response.json())
