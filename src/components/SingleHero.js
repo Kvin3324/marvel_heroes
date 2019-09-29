@@ -9,9 +9,7 @@ function HeroCards(props) {
         <div className="col-xl-6 about--hero--infos">
           <h3 className="about--hero--name"> {props.name}</h3>
             { (function() {
-              if (props.description.length > 200) {
-                return <p className="card-text">{props.description.substr(0, 50)} (...)</p>
-              } else if (props.description.length === 0) {
+              if (props.description.length === 0) {
                 return <p className="card-text-not-available">No description available.</p>
               } else {
                 return <p className="card-text">{props.description}</p>
@@ -23,10 +21,10 @@ function HeroCards(props) {
             {
               props.comics.items.map((item, index) => {
                 return (
-                  <li>
-                  <i className="fa fa-book mr-2"></i>
-                  {props.comics.items[index].name}
-                </li>
+                  <li key={index}>
+                    <i className="fa fa-book mr-2"></i>
+                    {props.comics.items[index].name}
+                  </li>
                 )
               })
             }
