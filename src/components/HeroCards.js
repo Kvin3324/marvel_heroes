@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 function HeroCards(props) {
   return (
-    <div className="col-xl-3 mr-2">
+    <div className="col-xl-3 col-sm-6 mr-4">
       <div className="card">
         <img src={`${props.img_hero.path}.${props.img_hero.extension}`} className="card-img-list" alt="..."/>
         <div className="card-body">
