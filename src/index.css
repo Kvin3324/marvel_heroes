@@ -24,7 +24,7 @@ code {
 }
 
 .logo-marvel {
-  width: 10%;
+  width: 8%;
   margin-bottom: 10px;
   margin-top: 10px
 }
@@ -32,16 +32,18 @@ code {
 .header--home {
   font-size: 0.5em;
   position: absolute;
-  left: 30%;
+  /* left: 30%; */
+  right: 5%;
 }
 
 .header--text, .header--text:hover {
   background-color: #ED1B23;
+  text-decoration: none;
   font-family: 'Comics';
-  padding: 10px;
+  padding: 4px 10px;
   border-radius: 10%;
   color: white;
-  font-size: 2.8em;
+  font-size: 14px;
 }
 
 .banner {
@@ -57,8 +59,6 @@ code {
   font-size: 20px;
   font-weight: bold;
   color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .search--bar--input {
@@ -68,20 +68,32 @@ code {
 
 .pagination {
   margin-top: 5%;
+  justify-content: center;
 }
 
 .container--cards {
   margin-left: 10%;
+  margin-top: 7%;
 }
 
 .card {
   width: 112%;
   margin-top: 10%;
   margin-left: 10%;
+  border-radius: 10px;
+  box-shadow: 3px 2px 5px grey;
+}
+
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .card-text-not-available {
   padding-bottom: 24px;
+}
+
+.card-text {
+  text-align: left;
 }
 
 .card-img-list {
@@ -92,6 +104,11 @@ code {
   width: 100%;
 }
 
+.btn-secondary, .btn-secondary:hover {
+  background-color: #ED1B23;
+  border-color: #ED1B23;
+}
+
 .link--to--go, .link--to--go:hover {
   text-decoration: none;
   color: white;
@@ -100,4 +117,16 @@ code {
 .about--hero {
   display: flex;
   padding-top: 5%;
+}
+
+.about--hero--description {
+  text-align: left;
+}
+
+.about--hero--infos {
+  text-align: left;
+}
+
+li {
+  list-style-type: none;
 }
