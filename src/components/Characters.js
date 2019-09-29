@@ -24,7 +24,6 @@ class Characters extends React.Component {
     fetch(`${this.state.url}v1/public/characters?apikey=${this.state.apiKey}&limit=10&offset=${page * 10}`)
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       this.setState({
         characters: data.data.results
       })
