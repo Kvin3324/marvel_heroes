@@ -74,9 +74,6 @@ class Characters extends React.Component {
         </div>
       </div>
         <div className="container container--cards">
-          <div className="pagination">
-            <Pagination onChange={page => this.getList(page)} defaultPageSize={10} total={1000} pageSize={10}  />
-          </div>
           <div className="row">
             { (function() {
               if(this.state.characters === null) {
@@ -97,6 +94,9 @@ class Characters extends React.Component {
             }).bind(this) ()
           }
           </div>
+        </div>
+        <div className="pagination">
+          <Pagination onChange={page => this.getList(page)} defaultPageSize={10} total={1000} pageSize={10}  />
         </div>
       </React.Fragment>
     )}
