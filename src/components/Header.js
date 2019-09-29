@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 
 function Header() {
     return (
-      <header className="title">
+      <header className="title d-flex">
         <div className="pt-4 header--home">
           <NavLink to="/" className="header--text">Home</NavLink>
         </div>
