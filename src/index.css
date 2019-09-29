@@ -130,3 +130,9 @@ code {
 li {
   list-style-type: none;
 }
+
+@media screen and (min-width: 640px) {
+  .banner {
+    width: 108vw;
+  }
+}
