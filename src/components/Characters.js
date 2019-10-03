@@ -8,9 +8,6 @@ class Characters extends React.Component {
     super(props)
     this.state = {
       url: "https://gateway.marvel.com/",
-      // apiKey: "f5d9657d8bb68f805b1ec30fe13cf70d",
-      apiKey: "d87aaf099d9bdee47146e7c016069624",
-      // apiKey: "e3eee8b3d6211e3f201b421f6c596e939fd449b9",
       characters: null,
       showList: {
         list: true,
@@ -21,7 +18,7 @@ class Characters extends React.Component {
   }
 
   getList(page) {
-    fetch(`${this.state.url}v1/public/characters?apikey=${this.state.apiKey}&limit=10&offset=${page * 10}`)
+    fetch(`${this.state.url}v1/public/characters?apikey=${process.env.REACT_APP_API_KEY_CHARACTERS}&limit=10&offset=${page * 10}`)
     .then(response => response.json())
     .then(data => {
       this.setState({
